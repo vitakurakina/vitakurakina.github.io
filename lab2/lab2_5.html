@@ -25,7 +25,18 @@
         </tr>
         <tr>
             <td>Год рождения</td>
-            <td><input type="date"><label>-й</label></td>
+            <td><select id="birth">
+                <!-- <option value=""></option> -->
+                <script>
+                    let y = 1940
+                    while(y<=2024)
+                    {
+                        document.getElementById('birth').innerHTML += '<option ' + (y === 1970 ? 'selected' : '') + '>' + y + '</option>';
+                        y++
+                        // document.getElementById('birth').innerHTML += '<option>'+y+'</option>'
+                    }
+                </script>
+            </select><label>-й</label></td>
             <!--change the date type input-->
         </tr>
         <tr>
@@ -52,7 +63,6 @@
             <td><input type="submit" value="Готово"></td>
             <td><input type="reset" value="Очистить"></td>
         </tr>
-
     </table>
 </form>
 </body>
