@@ -4,16 +4,15 @@
   font-weight: 400;
     src: local("Roboto"),
         url("/fonts/roboto.woff2") format("woff2"),
-       url("/fonts/roboto.woff") format("woff");
+        url("/fonts/roboto.woff") format("woff");
 }
 @font-face{
-    font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-family: "Caveat";
     font-style: normal;
+    font-weight: 400;
     src:local("Caveat"),
-    url("/fonts/caveat.woff2") format("woff2"),
-       url("/fonts/caveat.woff") format("woff");
+        url("/fonts/caveat.woff2") format("woff2"),
+        url("/fonts/caveat.woff") format("woff");
 }
 
 body{
@@ -31,6 +30,8 @@ p{
 }
 em{
     color: green;
+    border-bottom: double white;
+
 }
 
 h2{
