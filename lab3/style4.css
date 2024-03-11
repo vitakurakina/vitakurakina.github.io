@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+    src: local("Roboto"),
+        url("/fonts/roboto.woff2") format("woff2"),
+       url("/fonts/roboto.woff") format("woff");
+}
+@font-face{
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    src:local("Caveat"),
+    url("/fonts/caveat.woff2") format("woff2"),
+       url("/fonts/caveat.woff") format("woff");
+}
+
+body{
+    background-image: url("dotally.png");
+    background-size: 52px;
+    color:white;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left:  10px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+p{
+    text-align: right;
+}
+em{
+    color: green;
+}
+
+h2{
+    font-family: "Roboto";
+    font: arial;
+    color: red;
+}
+
+strong{
+    font-family: "Caveat";
+}
