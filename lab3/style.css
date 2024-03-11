@@ -1,0 +1,20 @@
+body{
+    background-color: black;
+    color:white;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left:  10px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+p{
+    text-align: right;
+}
+em{
+    color: green;
+}
+
+h2{
+    font: arial;
+    color: red;
+}
