@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,10 @@
 <body>
 	<section class="center">
 		<h1>Изображения</h1>
+		<p>
+			<img src="lab1_4/aquaria.jpg" alt="Aquaria jpg">
 
-		<img src = "lab1_4\aquaria.jpg" atl="this is a turtle">
-
+		</p>
 		<h2>Элемент <code>img</code></h2>
 
 		<img src="lab1_4/globus.gif" alt="A spinning Earth gif">
@@ -36,14 +37,18 @@
 		Атрибут <code>srcset</code> задаёт путь к графическим файлам с учётом размера изображения и устройств.
 		<p>
 			<img src="lab1_4/muscle.png" 
-			srcset="lab1_4/muscle.png 600w">
+			srcset="lab1_4/muscle.png 600w"
+			sizes="100vw"
+			alt="muscle">
+	   
 		</p>
 		<p>
 			<img src="lab1_4/mushroom.jpg" 
 			srcset="lab1_4/mushroom_portrait.jpg 600w,
-				lab1_4/mushroom.jpg 900w,
-				lab1_4/mushroom_landscape.jpg 1200w"
-			sizes="(max-width: 500px) 100vw, (max-width: 12px) 50vw, 33vw">
+					lab1_4/mushroom.jpg 900w,
+					lab1_4/mushroom_landscape.jpg 1200w"
+			sizes="(max-width: 500px) 100vw, (max-width: 12px) 50vw, 33vw"
+			alt="mushroom">	   
 		</p>
 		
 
@@ -55,8 +60,10 @@
 		Элемент <code>figcaption</code> содержит описание для элемента <code>figure</code>. Он должен быть первым или последним элементом в группе.</p>
 		
 		<figure>
-			<img src ="lab1_4/redcat.jpg"
-			srcset="lab1_4/redcat.jpg 600w">
+			<img src="lab1_4/redcat.jpg"
+     		srcset="lab1_4/redcat.jpg 600w"
+     		sizes="(max-width: 600px) 100vw, 600px">
+
 			<figcaption> This is a cute red cat</figcaption>
 		</figure>
 
@@ -73,7 +80,8 @@
 		
 		<picture>
 			<source srcset = "lab1_4/mushroom_portrait.jpg" media="(max-width:500px)">
-			<img src = "lab1_4/mushroom_landscape.jpg">
+			<img src="lab1_4/mushroom_landscape.jpg" alt="Landscape with mushrooms">
+
 		</picture>
 	</section>
 </body>
