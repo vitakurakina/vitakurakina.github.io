@@ -27,19 +27,23 @@ body{
     }
 p{
     text-align: right;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 em{
     color: green;
     border-bottom: double white;
-
+    padding: 0 10;
 }
 
-h2{
-    font-family: "Roboto";
-    font: arial;
+h1, h2{
+    font-family: 'Roboto', sans-serif;
     color: red;
+    text-align: right;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 strong{
-    font-family: "Caveat";
+    font-family: 'Caveat', sans-serif;
 }
