@@ -1,0 +1,82 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #94c524;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+  }
+
+  .rainbowText {
+    font-family:arial black;
+    background-image: 
+      linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: move 35s linear infinite;
+  }
+  @keyframes move {
+	to {
+		background-position: 1000vh;
+	}
+}
+  ul {
+    text-align: center;
+    list-style-position: inside;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  li a:link,
+  li a:visited {
+    width: 140px;
+    color: white;
+    padding: 14px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+    border: #21380b 5px solid;
+  }
+  
+  li a:hover,
+  li a:active {
+    padding: 19px 29px;
+    margin: 0px;
+    transition: 0.5s;
+  }
+  
+  img {
+    max-height: 210px;
+    transition: 0.5s;
+  }
+  
+  img:hover {
+    cursor: pointer;
+    max-height: 280px;
+    transition: 0.5s;
+  }
+  
+  div {
+    transform: rotate(360deg);
+    transition: transform 1s;
+  }
+  
+  div:active {
+    transform: rotate(0deg);
+    transition:  0s;
+  }
