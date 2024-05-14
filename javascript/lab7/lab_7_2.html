@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ::placeholder {
+        color: blue;
+    }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <textarea id="textArea" placeholder="ur text" data-placeholder="aaa"></textarea>
+    <script>
+        const t = document.getElementById("textArea")
+        const d = document.getElementById("div")
+        const ph = t.placeholder
+        const dph = t.dataset.placeholder
+        t.addEventListener("mouseover", function p1(){
+            t.placeholder=dph
+            d.innerText=ph
+        })
+        t.addEventListener("mouseout", function p2(){
+            if(!t.innerText){
+                d.innerText=""
+                t.placeholder=ph
+            }
+        })
+    </script>
+</body>
+</html>

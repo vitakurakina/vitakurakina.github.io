@@ -58,8 +58,18 @@ body {
     padding: 19px 29px;
     margin: 0px;
     transition: 0.5s;
+    animation: rotateborder 0.5s linear infinite;
   }
   
+  @keyframes rotateborder {
+    from {
+      transform: rotate (0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   img {
     max-height: 210px;
     transition: 0.5s;
@@ -73,7 +83,7 @@ body {
   
   div {
     transform: rotate(360deg);
-    transition: transform 1s;
+    transition: transform 0.5s;
   }
   
   div:active {

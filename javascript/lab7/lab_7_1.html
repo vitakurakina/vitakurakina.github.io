@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="printCurrent()">
+        <option value="Rock">Рок</option>
+        <option value="Blues">Блюз</option>
+    </select>
+    <div id="t"></div>
+    <script>
+        const s = document.querySelector("select")
+        const d = document.getElementById("t")
+        const o = document.createElement("option")
+        o.value="Classic"
+        o.text="Классика"
+        o.selected=true
+        s.add(o)
+        function printCurrent(){
+            d.innerText=s.selectedOptions[0].text
+        }
+        printCurrent(s)
+    </script>
+</body>
+</html>
