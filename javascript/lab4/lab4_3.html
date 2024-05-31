@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const book2 = new Book("You Don't Know JS", 2015, 35.99);
+        const book3 = new Book("Eloquent JavaScript", 2018, 25.99);
+
+        const books = [book1, book2, book3];
+        books.sort(Book.compare);
+
+        books.forEach(book => book.show());
+    </script>
+</body>
+</html>

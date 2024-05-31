@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let nestedObj = {
+            className: 'open menu',
+            details: {
+                author: 'John Doe',
+                year: 2021
+            }
+        };
+
+        const jsonString = JSON.stringify(nestedObj, null, 2);
+        console.log(jsonString);
+
+        const obj2 = JSON.parse(jsonString);
+        console.log(obj2);
+
+        console.log(JSON.stringify(nestedObj) === JSON.stringify(obj2)); // true
+
+    </script>
+</body>
+</html>

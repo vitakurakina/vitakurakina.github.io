@@ -11,23 +11,31 @@
     </style>
 </head>
 <body>
-    <div id="div"></div>
-    <textarea id="textArea" placeholder="ur text" data-placeholder="aaa"></textarea>
+    <div id="input-placeholder">
+        <label for="placeholder"></label>
+        <input type="text" id="placeholder" required minlength="3" maxlength="10" data-placeholder="enter ur text" size="25">
+    </div>
     <script>
-        const t = document.getElementById("textArea")
-        const d = document.getElementById("div")
-        const ph = t.placeholder
-        const dph = t.dataset.placeholder
-        t.addEventListener("mouseover", function p1(){
-            t.placeholder=dph
-            d.innerText=ph
-        })
-        t.addEventListener("mouseout", function p2(){
-            if(!t.innerText){
-                d.innerText=""
-                t.placeholder=ph
-            }
-        })
+        "use strict"
+        let label_el = document.getElementsByTagName("label")[0];
+        let input_el = document.getElementsByTagName("input")[0];
+        let placeholder = input_el.dataset.placeholder;
+        input_el.setAttribute("placeholder", placeholder);
+        label_el.textContent = placeholder;
+        label_el.style.display = "none";
+
+        input_el.onfocus = function ()
+        {
+            label_el.style.display = "block"
+            input_el.setAttribute("placeholder", "Nickname");
+        }
+
+        input_el.onblur = function ()
+        {
+            label_el.style.display = "none"
+            input_el.setAttribute("placeholder", placeholder);
+        }
+        console.log(placeholder);
     </script>
 </body>
 </html>
