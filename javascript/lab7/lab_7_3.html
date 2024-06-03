@@ -1,32 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Div в textarea</title>
 </head>
+
 <body>
-    <div id="wow"></div>
+
+    <div id="changeable"></div>
+
     <script>
-        var d = document.getElementById("wow")
-        var t = document.createElement('textarea')
-        var temp
-        document.addEventListener("keydown", function changeTag(event){
-            event.preventDefault()
-            if(event.ctrlKey && event.key === 'e'){
-                d.innerHTML = t.innerHTML
-                d.parentNode.replaceChild(t, d)
+        'use strict';
+
+        let div = document.getElementById('changeable');
+        let textarea = null;
+
+        document.onkeydown = function (event) {
+            if (event.ctrlKey && event.key === 'e') {
+
+                event.preventDefault();
+                if (!textarea) { // check if textarea does not exist
+                    textarea = document.createElement('textarea');
+                    textarea.value = div.innerHTML;
+                    div.replaceWith(textarea);
+                    textarea.focus();
+                }
+
             }
-            else if((event.ctrlKey && event.key === 's' && t.parentNode)){
-                d.innerText=t.value
-                temp=t.value
-                t.parentNode.replaceChild(d, t)
-            }
-            else if(event.keyCode == 27 && temp){
-                d.innerText=temp
-                t.parentNode.replaceChild(d, t)
-            }
-        })
+            else if (event.ctrlKey && event.key === 's') {
+                event.preventDefault();
+                if (textarea) {
+                    div.innerHTML = textarea.value;
+                    textarea.replaceWith(div);
+                    textarea = null;
+
+                }
+                else if (event.key === 'Escape') {
+                    if (textarea) {
+                        textarea.replaceWith(div);
+                        textarea = null;
+                    }
+                }
+            };
+        }
+
     </script>
+
 </body>
+
 </html>
