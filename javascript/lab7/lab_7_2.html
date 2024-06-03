@@ -6,8 +6,14 @@
     <title>Document</title>
     <style>
         ::placeholder {
-        color: blue;
-    }
+            color: blue;
+        }
+        #input-placeholder label {
+            position: absolute;
+            top: 30px; /* Adjust the vertical position */
+            left: 10px;
+            pointer-events: none; 
+        }
     </style>
 </head>
 <body>
@@ -24,18 +30,17 @@
         label_el.textContent = placeholder;
         label_el.style.display = "none";
 
-        input_el.onfocus = function ()
-        {
-            label_el.style.display = "block"
+        input_el.onfocus = function () {
+            label_el.style.display = "block";
             input_el.setAttribute("placeholder", "t e x t");
         }
 
-        input_el.onblur = function ()
-        {
-            label_el.style.display = "none"
+        input_el.onblur = function () {
+            label_el.style.display = "none";
             input_el.setAttribute("placeholder", placeholder);
         }
         console.log(placeholder);
     </script>
 </body>
 </html>
+
