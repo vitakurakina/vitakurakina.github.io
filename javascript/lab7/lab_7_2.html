@@ -1,46 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        ::placeholder {
-            color: blue;
+        body {
+            font-family: Arial, sans-serif;
         }
-        #input-placeholder label {
+
+        .form-group {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        label {
             position: absolute;
-            top: 30px; /* Adjust the vertical position */
-            left: 10px;
-            pointer-events: none; 
+            top: 0;
+            left: 5px;
+            transition: all 0.3s;
+            pointer-events: none;
+            font-size: 16px;
+            color: grey;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: -20px;
+            left: 5px;
+            font-size: 12px;
+            color: blue;
         }
     </style>
 </head>
+
 <body>
-    <div id="input-placeholder">
-        <label for="placeholder"></label>
-        <input type="text" id="placeholder" required minlength="3" maxlength="10" data-placeholder="enter ur text" size="25">
-    </div>
+
+    <form id="form">
+        <div class="form-group">
+            <input id="placeholder" type="text" placeholder=" " data-placeholder="Введите текст">
+            <label for="placeholder">Введите текст</label>
+        </div>
+    </form>
+
     <script>
-        "use strict"
-        let label_el = document.getElementsByTagName("label")[0];
-        let input_el = document.getElementsByTagName("input")[0];
-        let placeholder = input_el.dataset.placeholder;
-        input_el.setAttribute("placeholder", placeholder);
-        label_el.textContent = placeholder;
-        label_el.style.display = "none";
+        'use strict';
 
-        input_el.onfocus = function () {
-            label_el.style.display = "block";
-            input_el.setAttribute("placeholder", "t e x t");
-        }
+        let field = document.getElementById("placeholder");
+        let label = field.nextElementSibling;
 
-        input_el.onblur = function () {
-            label_el.style.display = "none";
-            input_el.setAttribute("placeholder", placeholder);
-        }
-        console.log(placeholder);
+        field.addEventListener('focus', () => {
+            label.style.color = 'blue';
+        });
+
+        field.addEventListener('blur', () => {
+            if (!field.value) {
+                label.style.color = 'grey';
+            }
+        });
     </script>
-</body>
-</html>
 
+</body>
+
+</html>
